@@ -1,4 +1,4 @@
-//Dependencies required
+//Dependencies required for application to run
 const   http = require('http'), //Provides the HTTP server functionalities
         path = require('path'), //Provides utilities for working with file and directory paths
         express = require('express'), //Allow app to respond to HTTP requests, defines the routing and renders back the required content
@@ -7,12 +7,14 @@ const   http = require('http'), //Provides the HTTP server functionalities
         xsltProcess = require('xslt-processor').xsltProcess, //Allows us to utilize XSL Transformations
         xml2js = require('xml2js'); //XML <-> JSON conversion
 
+//Creating server
 const   router = express(), 
         server = http.createServer(router);
 
-router.use(express.static(path.resolve(__dirname,'views'))); //We serve static content from "views" folder
+router.use(express.static(path.resolve(__dirname,'views'))); //Send static content from "views" folder
 
-router.get('/', function(req, res) {
+//Transforming XML & XSL files into a text/html document
+router.get('/get/html', function(req, res) {
 
     res.writeHead(200, {'Content-Type' : 'text/html'});
 
@@ -36,6 +38,7 @@ router.get('/', function(req, res) {
 
 });
 
+//Telling server to listen for connections on port 3000
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
     const addr = server.address();
     console.log("Server listening at", addr.address + ":" + addr.port)

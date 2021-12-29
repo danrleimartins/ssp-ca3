@@ -6,14 +6,13 @@
             <title>SkyBlue Smart Home</title>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
             <link rel="stylesheet" href="css/SkyBlue.css"/>
-            <script src="js/SkyBlue.js"></script>
         </head>
         <body>
-            <p>Welcome!</p>
+            <h1>Welcome!</h1>
             <table id="menuTable" border="1" class="indent">
                 <thead>
                     <tr>
-                        <th colspan="3">SkyBlue Smart Home</th>
+                        <th colspan="3"><h2>SkyBlue Smart Home</h2></th>
                     </tr>
                     <tr>
                         <th>Select</th>
@@ -25,7 +24,7 @@
                     <xsl:for-each select="//section">
                         <tr>
                             <td colspan="3">
-                                <xsl:value-of select="@name" />
+                                <h3><xsl:value-of select="@name" />
                             </td>
                         </tr>
                         <xsl:for-each select="entry">
