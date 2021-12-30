@@ -21,18 +21,10 @@ router.get('/get/html', function(req, res) {
     let xml = fs.readFileSync('SkyBlueSmartHome.xml', 'utf8'),
         xsl = fs.readFileSync('SkyBlueSmartHome.xsl', 'utf8');
 
-    console.log(xml);
-    console.log(xsl);
-
     let doc = xmlParse(xml),
         stylesheet = xmlParse(xsl);
 
-    console.log(doc);
-    console.log(stylesheet);
-
     let result = xsltProcess(doc, stylesheet);
-
-    console.log(result);
 
     res.end(result.toString());
 

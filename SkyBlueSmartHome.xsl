@@ -5,19 +5,11 @@
         <head>
             <title>SkyBlue Smart Home</title>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-            <link rel="stylesheet" href="css/SkyBlue.css"/>
         </head>
         <body>
-            <h1>Welcome!</h1>
-            <table id="menuTable" border="1" class="indent">
+            <table id="menuTable" border="1" class=" table table-hover table-success table-striped">
                 <thead>
                     <tr>
-                        <th colspan="3"><h2>SkyBlue Smart Home</h2></th>
-                    </tr>
-                    <tr>
-                        <th>Select</th>
-                        <th>Item</th>
-                        <th>Price</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,15 +19,18 @@
                                 <h3><xsl:value-of select="@name" />
                             </td>
                         </tr>
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
                         <xsl:for-each select="entry">
                             <tr id="{position()}">
-                                <td align="center">
-                                    <input name="item0" type="checkbox" />
-                                </td>
                                 <td>
                                     <xsl:value-of select="item" />
                                 </td>
-                                <td align="right">
+                                <td>
                                     <xsl:value-of select="price" />
                                 </td>
                             </tr>
