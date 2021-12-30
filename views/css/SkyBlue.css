@@ -1,0 +1,9 @@
+.selected {
+    background-color: #dc3545;
+    color: white;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 0.5px solid black;
+}
