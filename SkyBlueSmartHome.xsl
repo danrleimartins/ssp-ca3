@@ -3,7 +3,10 @@
 <xsl:template match="/">
     <table id="menuTable" border="1" class="table">
                 <thead>
-                    <tr />
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <xsl:for-each select="//section">
@@ -12,12 +15,6 @@
                                 <h3><xsl:value-of select="@name" />
                             </td>
                         </tr>
-                <thead>
-                    <tr>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                    </tr>
-                </thead>
                         <xsl:for-each select="entry">
                             <tr id="{position()}">
                                 <td>

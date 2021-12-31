@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?> 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <menu>
   <section name="Lighting">
     <entry>
@@ -11,10 +11,6 @@
     </entry>
     <entry>
       <item>Philips HDMI Sync Box &amp; Gradient Lightstrip Bundle</item>
-      <price>€430</price>
-    </entry>
-    <entry>
-      <item>Test</item>
       <price>€430</price>
     </entry>
   </section>

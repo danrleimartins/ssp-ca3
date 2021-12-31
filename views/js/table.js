@@ -1,20 +1,21 @@
-//Function to display table to end-user
-function draw_table(){
-
-    $("#results").empty(); //make sure the div is empty
-
-    $.getHTMLuncached = function(url){
-        return $.ajax({
-            url: url,
-            type: 'GET',
-            cache: false,
-            success: function(html){
-                $("#results").append(html); //append table to html doc
-                select_row();
-            }
-        })
-    };
-    $.getHTMLuncached("/get/html");
+function draw_table()
+{
+	$("#results").empty();
+	$.getJSONuncached = function (url)
+	{
+		return $.ajax(
+		{
+			url: url,
+			type: 'GET',
+			cache: false,
+			success: function (html)
+			{
+				$("#results").append(html);
+				select_row();
+			}
+		});
+	};
+	$.getJSONuncached("/get/html")
 };
 
 function select_row()
@@ -48,7 +49,7 @@ function delete_row(sec, ent)
 	})
 };
 
-//Load function as soon as the document is ready
-$(document).ready(function(){
-    draw_table();
+$(document).ready(function ()
+{
+	draw_table();
 });
