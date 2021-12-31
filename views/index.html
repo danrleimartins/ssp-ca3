@@ -12,7 +12,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <!-- CSS -->
-    <link  href="css/SkyBlue.css" rel="stylesheet" />
+    <link href="css/SkyBlue.css" rel="stylesheet" />
     <!-- jQuery CDN-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -46,25 +46,39 @@
                 <p class="lead">Check our complete portfolio of tech-smart products for your home</p>
                 <hr>
             </div>
-            <!-- Display Table-->
+            <!-- Table-->
             <div id="results" class="col-lg-8 mb-5 order-2">
             </div>
 
-            <!-- Display Form-->
+            <!-- Form with Bootstrap Validation-->
             <div id="menu" class="col-lg-4 mb-5 order-1">
                 <p class="display-6">Add/Remove Product</p>
-                <form enctype="application/json" action="/post/json" method="post">
+                <form class="was-validated" enctype="application/json" action="/post/json" method="post">
                     <div class="form-group">
-                        <select class="form-control form-select" name="sec_n">
-                            <option selected>Select Category</option>
+                        <select class="form-control form-select" name="sec_n" required>
+                            <option selected value="">Select Category</option>
                             <option value="0">Lighting</option>
                             <option value="1">Cameras</option>
                             <option value="2">Doorbells</option>
                             <option value="3">Speakers</option>
                             <option value="4">Heating</option>
                         </select>
-                        <input class="form-control mt-3" type="text" name="item" placeholder="Product">
-                        <input class="form-control mt-3" type="text" name="price" placeholder="Price">
+                        <div class="invalid-feedback">Please choose a product category.</div>
+
+                        <!-- <label for="product" class="form-label"></label> -->
+                        <input class="form-control mt-3" type="text" name="item" id="product" placeholder="Product"
+                            required>
+                        <div class="invalid-feedback">Please choose a product name.</div>
+                        <!-- <div class="valid-feedback">Valid.</div> -->
+
+                        <!-- <label for="validationServerPrice" class="form-label"></label> -->
+                        <input class="form-control mt-3" type="text" id="validationServerPrice" name="price"
+                            placeholder="Price" required>
+                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Please choose a product price.
+                        </div>
+
+
                         <div class="d-grid gap-2"><button type="submit"
                                 class="btn btn-primary btn-block mt-3">Submit</button></div>
                     </div>

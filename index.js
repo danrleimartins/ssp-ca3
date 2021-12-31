@@ -1,17 +1,19 @@
-const   http = require('http'), //This module provides the HTTP server functionalities
-        path = require('path'), //The path module provides utilities for working with file and directory paths
-        express = require('express'), //This module allows this app to respond to HTTP requests, defines the routing and renders back the required content
-        fs = require('fs'), //This module allows to work with the file system: read and write files back
-        xmlParse = require('xslt-processor').xmlParse, //This module allows to work with XML files
-        xsltProcess = require('xslt-processor').xsltProcess, //The same module allows us to uitlise XSL Transformations
-        xml2js = require('xml2js'); //This module does XML <-> JSON conversion
+//Dependencies required for application to run
+const   http = require('http'), //Provides the HTTP server functionalities
+        path = require('path'), //Provides utilities for working with file and directory paths
+        express = require('express'), //Allow app to respond to HTTP requests, defines the routing and renders back the required content
+        fs = require('fs'), //Allow to work with the file system: read and write files back
+        xmlParse = require('xslt-processor').xmlParse, //Allow to work with XML files
+        xsltProcess = require('xslt-processor').xsltProcess, //Allows us to utilize XSL Transformations
+        xml2js = require('xml2js'); //XML <-> JSON conversion
 
+//Creating server
 const   router = express(), 
         server = http.createServer(router);
 
-router.use(express.static(path.resolve(__dirname,'views'))); //We serve static content from "views" folder
-router.use(express.urlencoded({extended: true})); //We allow the data sent from the client to be encoded in a URL targeting our end point
-router.use(express.json()); //We include support for JSON
+router.use(express.static(path.resolve(__dirname,'views'))); //Send static content from "views" folder
+router.use(express.urlencoded({extended: true})); //Allow the data sent from the client to be encoded in a URL targeting our end point
+router.use(express.json()); //Include support for JSON
 
 // Function to read in XML file and convert it to JSON
 function XMLtoJSON(filename, cb) {
@@ -31,6 +33,7 @@ function JSONtoXML(filename, obj, cb) {
     fs.writeFile(filepath, xml, cb);
 };
 
+//Transforming XML & XSL files into a text/html document
 router.get('/get/html', function(req, res) {
 
     res.writeHead(200, {'Content-Type' : 'text/html'});
@@ -55,6 +58,7 @@ router.get('/get/html', function(req, res) {
 
 });
 
+//Function to Append a product
 router.post('/post/json', function (req, res) {
 
     function appendJSON(obj) {
@@ -80,6 +84,7 @@ router.post('/post/json', function (req, res) {
 
 });
 
+//Function to delete a product
 router.post('/post/delete', function (req, res) {
 
     function deleteJSON(obj) {
@@ -105,6 +110,7 @@ router.post('/post/delete', function (req, res) {
 
 });
 
+//Telling server to listen for connections on port 3000
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
     const addr = server.address();
     console.log("Server listening at", addr.address + ":" + addr.port)
