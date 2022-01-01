@@ -5,7 +5,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Product</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">Price (€)</th>
                     </tr>
                 </thead>
                 <tbody>

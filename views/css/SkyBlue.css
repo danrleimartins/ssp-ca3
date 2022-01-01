@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap&family=Satisfy&display=swap');
+
+
 .selected {
     background-color: #dc3545;
     color: white;
@@ -9,8 +12,27 @@ table, th, td {
 }
 
 body {
-    background: #C9D6FF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); 
     
+}
+
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+    font-size: 30px;
+    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link{
+    font-family: 'Poiret One', sans-serif;
+    color: white;
+    font-size: 17px;
+}
+
+#main-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
 }

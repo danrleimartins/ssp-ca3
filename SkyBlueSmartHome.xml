@@ -3,71 +3,71 @@
   <section name="Lighting">
     <entry>
       <item>Philips Bluetooth LED Bulb</item>
-      <price>€15</price>
+      <price>15</price>
     </entry>
     <entry>
       <item>Nanoleaf Smarter Kit Smart Lights</item>
-      <price>€300</price>
+      <price>300</price>
     </entry>
     <entry>
       <item>Philips HDMI Sync Box &amp; Gradient Lightstrip Bundle</item>
-      <price>€430</price>
+      <price>430</price>
     </entry>
   </section>
   <section name="Cameras">
     <entry>
       <item>Google Nest Cam Indoor Smart Security Camera</item>
-      <price>€70</price>
+      <price>70</price>
     </entry>
     <entry>
       <item>Ring Full HD 1080p WiFi Security Camera</item>
-      <price>€139</price>
+      <price>139</price>
     </entry>
     <entry>
       <item>Swann Enforcer 4K Ultra HD Security System (2 TB, 6 Cameras)</item>
-      <price>€1199.99</price>
+      <price>1199.99</price>
     </entry>
   </section>
   <section name="Doorbells">
     <entry>
       <item>Lloytron Doorbell Chime</item>
-      <price>€25</price>
+      <price>25</price>
     </entry>
     <entry>
       <item>Google Nest Hello Video Doorbell</item>
-      <price>€169</price>
+      <price>169</price>
     </entry>
     <entry>
       <item>Google Nest Hello Video Doorbell &amp; Nest Hub Bundle </item>
-      <price>€319</price>
+      <price>319</price>
     </entry>
   </section>
   <section name="Speakers">
     <entry>
       <item>Google Nest Audio</item>
-      <price>€74.99</price>
+      <price>74.99</price>
     </entry>
     <entry>
       <item>Google Nest Hub Max</item>
-      <price>€169</price>
+      <price>169</price>
     </entry>
     <entry>
       <item>Amazon Echo Show 10 Smart Display</item>
-      <price>€240</price>
+      <price>240</price>
     </entry>
   </section>
   <section name="Heating">
     <entry>
       <item>Tado Smart Thermostat</item>
-      <price>€98</price>
+      <price>98</price>
     </entry>
     <entry>
       <item>Google Nest Learning Thermostat</item>
-      <price>€187</price>
+      <price>187</price>
     </entry>
     <entry>
       <item>Netatmo Smart Thermostat with 3 Radiator Valves</item>
-      <price>€359</price>
+      <price>359</price>
     </entry>
   </section>
 </menu>

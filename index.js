@@ -6,6 +6,7 @@ const   http = require('http'), //Provides the HTTP server functionalities
         xmlParse = require('xslt-processor').xmlParse, //Allow to work with XML files
         xsltProcess = require('xslt-processor').xsltProcess, //Allows us to utilize XSL Transformations
         xml2js = require('xml2js'); //XML <-> JSON conversion
+        check = require('express-validator'); //Provides input validation
 
 //Creating server
 const   router = express(), 
@@ -109,6 +110,15 @@ router.post('/post/delete', function (req, res) {
     res.redirect('back');
 
 });
+
+// //Function to check input
+// router.post('/post/json', [
+//     check('item').isLength({ min: 3 }).trim().escape(),
+//     check('price').isNumeric().isLength({ min: 0}),
+//   ], (req, res) => {
+//     const item  = req.body.name
+//     const price = req.body.email
+//   }) 
 
 //Telling server to listen for connections on port 3000
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
