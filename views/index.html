@@ -37,7 +37,8 @@
                     <li class="nav-item "><a href="index.html" class="nav-link active">Home</a></li>
                     <li class="nav-item"><a target="_blank" href="https://github.com/danrleimartins/ssp-ca3"
                             class="nav-link">GitHub Repository</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Presentation</a></li>
+                    <li class="nav-item"><a href="" target="_blank" class="nav-link">Presentation</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -50,18 +51,18 @@
                 <h1 class="display-2 light mt-5 mb-2">SkyBlue Smart Home</h1>
                 <p class="lead">Check our complete portfolio of tech products for your home</p>
             </div>
-            <div class="col-lg-6">
-                <img src="img/smart-home-1.svg" alt="" class=" rounded mx-auto d-block img-fluid" id="main-img">
+            <div class="col-lg-6 shadow rounded mb-3">
+                <img src="img/smart-home-1.svg" alt="" class=" rounded mx-auto d-block img-fluid main-img">
             </div>
-            <div class="col-lg-6">
-                <img src="img/smart-home-2.svg" alt="" class=" rounded mx-auto d-block img-fluid" id="main-img">
+            <div class="col-lg-6 shadow rounded mb-3">
+                <img src="img/smart-home-2.svg" alt="" class=" rounded mx-auto d-block img-fluid main-img">
             </div>
             <hr>
 
             <!-- Table-->
             <div class="col-lg-8 mb-5 order-2">
                 <p class="display-6 text-center">Products</p>
-                <div id="results" class="">
+                <div id="results" class="table-striped">
                 </div>
             </div>
 
@@ -79,21 +80,17 @@
                             <option value="3">Speakers</option>
                             <option value="4">Heating</option>
                         </select>
-                        <div class="invalid-feedback">Please select a category.</div>
+                        <!-- <div class="invalid-feedback">Please select a category.</div> -->
 
-                        <input class="form-control mt-3" type="text" name="item" id="product" placeholder="Product"
-                            required>
-                        <div class="invalid-feedback">Please enter a product name.</div>
+                        <input class="form-control mt-3" type="text" name="item" id="product" placeholder="Product" required>
+                        <!-- <div class="invalid-feedback">Please enter a product name.</div> -->
+                        <!-- <div class="valid-feedback">Looks good!</div> -->
 
-                        <input class="form-control mt-3" type="text" id="validationServerPrice" name="price"
-                            placeholder="Price (€)" required>
-                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                            Please enter a price.
-                        </div>
+                        <input class="form-control mt-3" type="number" name="price" placeholder="Price (€)" required>
+                        <!-- <div class="invalid-feedback"> Please enter a price.</div> -->
+                        <!-- <div class="valid-feedback"></div> -->
 
-
-                        <div class="d-grid gap-2"><button type="submit"
-                                class="btn btn-primary btn-block mt-3">Submit</button></div>
+                        <div class="d-grid gap-2"><button type="submit" class="btn btn-primary btn-block mt-3">Submit</button></div>
                     </div>
                 </form>
                 <div class="d-grid gap-2">
@@ -103,13 +100,16 @@
                 </p>
                 <hr>
                 <!-- Contact Us and Map-->
-                <h4 class="mt-lg-0 mt-sm-4 display-6 text-center">Contact Us</h4>
+                <h4 class="mt-lg-0 mt-sm-4 display-6 text-center" id="contact">Contact Us</h4>
                 <p class="pr-5 text-justify lead">Do you have any questions? Please do not hesitate to contact us
-                    directly. Our team will come back to you within a matter of hours to help you.</p>
+                    directly.</p>
                 <p class="text-center"><i class="fa fa-phone mr-3"></i>+353 (01) 2862525</p>
                 <p class="text-center"><i class="fa fa-envelope-o mr-3"></i> info@skyblue.ie</p>
                 <hr>
-                <h4 class="mt-lg-0 mt-sm-4 display-6 text-center">Where To Find Us</h4><br>
+                <h4 class=" display-6 text-center">Where To Find Us</h4>
+                <p class="text-start lead">4 Florence Terrace,
+                    Bray,
+                    Co. Wicklow, Ireland</p>
                 <div class="text-center shadow-5 rounded"><iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2389.780878708507!2d-6.1043848841669!3d53.2038458799494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4867a868cb470199%3A0x3b47ecb4afd7acb!2s4%20Florence%20Terrace%2C%20Bray%2C%20Co.%20Wicklow!5e0!3m2!1sen!2sie!4v1620292022324!5m2!1sen!2sie"
                         width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

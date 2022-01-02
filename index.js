@@ -6,15 +6,14 @@ const   http = require('http'), //Provides the HTTP server functionalities
         xmlParse = require('xslt-processor').xmlParse, //Allow to work with XML files
         xsltProcess = require('xslt-processor').xsltProcess, //Allows us to utilize XSL Transformations
         xml2js = require('xml2js'); //XML <-> JSON conversion
-        check = require('express-validator'); //Provides input validation
-
+              
 //Creating server
-const   router = express(), 
-        server = http.createServer(router);
+const   app = express(), 
+        server = http.createServer(app);
 
-router.use(express.static(path.resolve(__dirname,'views'))); //Send static content from "views" folder
-router.use(express.urlencoded({extended: true})); //Allow the data sent from the client to be encoded in a URL targeting our end point
-router.use(express.json()); //Include support for JSON
+app.use(express.static(path.resolve(__dirname,'views'))); //Send static content from "views" folder
+app.use(express.urlencoded({extended: true})); //Allow the data sent from the client to be encoded in a URL targeting our end point
+app.use(express.json()); //Include support for JSON
 
 // Function to read in XML file and convert it to JSON
 function XMLtoJSON(filename, cb) {
@@ -35,36 +34,26 @@ function JSONtoXML(filename, obj, cb) {
 };
 
 //Transforming XML & XSL files into a text/html document
-router.get('/get/html', function(req, res) {
+app.get('/get/html', function(req, res) {
 
     res.writeHead(200, {'Content-Type' : 'text/html'});
 
     let xml = fs.readFileSync('SkyBlueSmartHome.xml', 'utf8'),
         xsl = fs.readFileSync('SkyBlueSmartHome.xsl', 'utf8');
 
-    console.log(xml);
-    console.log(xsl);
-
     let doc = xmlParse(xml),
         stylesheet = xmlParse(xsl);
 
-    console.log(doc);
-    console.log(stylesheet);
-
     let result = xsltProcess(doc, stylesheet);
-
-    console.log(result);
 
     res.end(result.toString());
 
 });
 
-//Function to Append a product
-router.post('/post/json', function (req, res) {
+//Function to Append a product & Check Input
+app.post('/post/json', function (req, res) {
 
     function appendJSON(obj) {
-
-        console.log(obj)
 
         XMLtoJSON('SkyBlueSmartHome.xml', function (err, result) {
             if (err) throw (err);
@@ -86,7 +75,7 @@ router.post('/post/json', function (req, res) {
 });
 
 //Function to delete a product
-router.post('/post/delete', function (req, res) {
+app.post('/post/delete', function (req, res) {
 
     function deleteJSON(obj) {
 
@@ -110,16 +99,6 @@ router.post('/post/delete', function (req, res) {
     res.redirect('back');
 
 });
-
-// //Function to check input
-// router.post('/post/json', [
-//     check('item').isLength({ min: 3 }).trim().escape(),
-//     check('price').isNumeric().isLength({ min: 0}),
-//   ], (req, res) => {
-//     const item  = req.body.name
-//     const price = req.body.email
-//   }) 
-
 //Telling server to listen for connections on port 3000
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
     const addr = server.address();
