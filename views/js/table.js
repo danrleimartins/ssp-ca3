@@ -1,3 +1,12 @@
+/*
+*    The table.js was built on top of the following source code:
+*       Title: ssp-practical
+*       Author: Mikhail Timofeev
+*       Date: 2020
+*       Available at: https://github.com/mikhail-cct/ssp-practical/
+*/
+
+//Function that displays the table of products.
 function draw_table()
 {
 	$("#results").empty();
@@ -18,6 +27,7 @@ function draw_table()
 	$.getJSONuncached("/get/html")
 };
 
+//Function that selects and highlights products.
 function select_row()
 {
 	$("#menuTable tbody tr[id]").click(function ()
@@ -30,6 +40,7 @@ function select_row()
 	})
 };
 
+//Function that deletes a selected product.
 function delete_row(sec, ent)
 {
 	$("#delete").click(function ()
@@ -49,6 +60,7 @@ function delete_row(sec, ent)
 	})
 };
 
+//Load function when page (document) is ready.
 $(document).ready(function ()
 {
 	draw_table();

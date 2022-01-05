@@ -1,3 +1,11 @@
+/*
+*    The index.js was built on top of the following source code:
+*       Title: ssp-practical
+*       Author: Mikhail Timofeev
+*       Date: 2020
+*       Available at: https://github.com/mikhail-cct/ssp-practical/
+*/
+
 //Dependencies required for application to run
 const   http = require('http'), //Provides the HTTP server functionalities
         path = require('path'), //Provides utilities for working with file and directory paths
@@ -15,7 +23,7 @@ app.use(express.static(path.resolve(__dirname,'views'))); //Send static content 
 app.use(express.urlencoded({extended: true})); //Allow the data sent from the client to be encoded in a URL targeting our end point
 app.use(express.json()); //Include support for JSON
 
-// Function to read in XML file and convert it to JSON
+// Function to read a XML file and convert it to JSON
 function XMLtoJSON(filename, cb) {
     var filepath = path.normalize(path.join(__dirname, filename));
     fs.readFile(filepath, 'utf8', function(err, xmlStr) {
@@ -33,7 +41,7 @@ function JSONtoXML(filename, obj, cb) {
     fs.writeFile(filepath, xml, cb);
 };
 
-//Transforming XML & XSL files into a text/html document
+//Parsing XML & XSL files into a text/html document
 app.get('/get/html', function(req, res) {
 
     res.writeHead(200, {'Content-Type' : 'text/html'});
@@ -50,7 +58,7 @@ app.get('/get/html', function(req, res) {
 
 });
 
-//Function to Append a product & Check Input
+//Function to Append a product
 app.post('/post/json', function (req, res) {
 
     function appendJSON(obj) {
